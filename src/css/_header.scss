@@ -1,0 +1,142 @@
+// Header
+.header {
+  margin: 10px 0 0;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 40px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 36px;
+    color: #00A9E0;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -52px;
+    right: 15px;
+
+    @include media-breakpoint-up(sm) {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-right: 185px;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: 205px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 245px;
+    }
+
+    li {
+      margin: 0 0 0 20px;
+      display: block;
+
+      @include media-breakpoint-up(md) {
+        margin-left: 35px;
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+      color: #5B6770;
+      font-size: 12px;
+      display: block;
+      position: relative;
+      min-width: 24px;
+      text-align: center;
+      padding-top: 30px;
+
+      svg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -12px;
+      }
+
+      &:hover,
+      &:active,
+      &--active {
+        color: #00A9E0;
+        text-decoration: none;
+
+        // Icons
+        svg path {
+          fill: #00A9E0;
+        }
+      }
+
+      // Icons
+      &--all svg {
+      }
+
+      &--new svg {
+        margin-left: -8px;
+      }
+
+      &--top svg {
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(sm) {
+      position: absolute;
+      margin-top: 0;
+      margin-bottom: 0;
+      right: 15px;
+      top: 0;
+    }
+
+    input[type="text"] {
+      border-radius: 20px;
+      border: solid 1px #5B6770;
+      display: block;
+      padding: 10px 20px;
+      height: 40px;
+      width: 100%;
+      transition: all .1s ease-in-out;
+
+      @include media-breakpoint-up(sm) {
+        width: 160px;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #00A9E0;
+      }
+    }
+
+    input[type="submit"] {
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      text-align: left;
+      text-indent: -90009px;
+      background: #5B6770 url('/img/ico_search.svg') no-repeat 50% 50%;
+      display: block;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+  }
+}

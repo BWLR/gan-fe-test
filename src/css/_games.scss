@@ -1,0 +1,50 @@
+// Games List
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
+
+// Components
+// Game
+.c-game {
+  &__image {
+    width: 100%;
+  }
+
+  // Large thumbnails
+  &:nth-child(3) {
+    @include media-breakpoint-up(md) {
+      grid-area: 1 / 3 / 3 / 5;
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-area: 1 / 3 / 3 / 5;
+    }
+  }
+
+  &:nth-child(16) {
+    @include media-breakpoint-up(md) {
+      grid-area: 5 / 1 / 7 / 3;
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-area: 3 / 5 / 5 / 7;
+    }
+  }
+}
